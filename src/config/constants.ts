@@ -1,6 +1,6 @@
 export const configServiceName = 'environmentVariables';
 
 export enum NodeEnvs {
-  dev = 'development',
+  dev = 'develop',
   prod = 'production',
 }
