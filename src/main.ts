@@ -1,4 +1,4 @@
-import { ValidationPipe } from '@nestjs/common';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
@@ -18,6 +18,7 @@ async function bootstrap() {
   app.register(helmet);
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
+  app.enableVersioning({ type: VersioningType.URI });
 
   const documentation = new DocumentBuilder().setTitle(name).setVersion(version).build();
   const document = SwaggerModule.createDocument(app, documentation);
