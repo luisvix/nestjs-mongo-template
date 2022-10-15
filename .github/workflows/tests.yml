@@ -38,7 +38,7 @@ jobs:
 
   integration-testing:
     environment: develop
-    needs: [ canceling-previous-deploys ]
+    needs: [ cancel-previous-deploys ]
     runs-on: ubuntu-22.04
     services:
       mongodb:
