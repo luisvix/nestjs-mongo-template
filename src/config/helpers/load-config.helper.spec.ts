@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { loadConfig, config, loadTestConfig } from './load-config.helper';
 
 describe('enviromentVariables.helper', () => {
