@@ -33,9 +33,7 @@ jobs:
           node-version: 16.18.0
           cache: 'npm'
       - run: npm ci
-      - name: Testing
-        uses: ArtiomTr/jest-coverage-report-action@v2
-
+      
   integration-testing:
     environment: develop
     needs: [ cancel-previous-deploys ]
