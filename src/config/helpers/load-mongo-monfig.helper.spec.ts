@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { loadTestConfig } from './load-config.helper';
 import { loadMongoConfig } from './load-mongo-config.helper';
 

@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { execSync } = require('child_process');
 
-const jestGlobalSetup = () => {
-  console.log('jestSetup');
+export const setup = () => {
+  console.log('Starting test setup');
 
   if (process.env.CI !== 'true') {
     const out = execSync(
@@ -12,4 +12,11 @@ const jestGlobalSetup = () => {
   }
 };
 
-module.exports = jestGlobalSetup;
+export const teardown = () => {
+  console.log('Starting test TearDown');
+
+  if (process.env.CI !== 'true') {
+    const out = execSync('docker compose -p nest-app-name-testing -f docker-compose-test.yml down');
+    console.log(out.toString('utf-8'));
+  }
+};

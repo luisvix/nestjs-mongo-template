@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { loadTestConfig } from './config/helpers/load-config.helper';
 import { version } from '../package.json';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 describe('App (e2e)', () => {
   let app: NestFastifyApplication;
