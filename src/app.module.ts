@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { tokens } from './config/constants';
 import { loadMongoConfig } from './config/helpers/load-mongo-config.helper';
 
 @Module({
@@ -14,6 +13,6 @@ import { loadMongoConfig } from './config/helpers/load-mongo-config.helper';
     }),
   ],
   controllers: [AppController],
-  providers: [{ provide: tokens.appService, useClass: AppService }],
+  providers: [AppService],
 })
 export class AppModule {}

@@ -1,12 +1,11 @@
 import { Controller, Get, Inject, VERSION_NEUTRAL } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
-import { tokens } from './config/constants';
 
 @ApiTags('App')
 @Controller({ version: VERSION_NEUTRAL })
 export class AppController {
-  constructor(@Inject(tokens.appService) private appService: AppService) {}
+  constructor(private appService: AppService) {}
 
   @Get('health')
   getHealth(): string {
